@@ -82,7 +82,56 @@ class frontReal extends StatelessWidget {
           ),
         ),
         back: Container(
-          child: Text('back'),
+          margin: EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(10.0),
+          width: width1,
+          height: height1 * 0.7,
+          child: Card(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+            elevation: 50.0,
+            shadowColor: Colors.black,
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    fit: BoxFit.contain,
+                    image: AssetImage(
+                        'assets/images/Screenshot 2023-05-15 000934.png')),
+              ),
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(),
+                    height: height1 * 0.6,
+                    width: width1 * 0.7,
+                    child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30)),
+                        color: Colors.grey[200],
+                        child: Column(
+                          children: [
+                            Text(
+                              args["backDescription"],
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
+                            ),
+                            args["backImage"] != ''
+                                ? Expanded(
+                                    child: Image.file(File(args["backImage"])))
+                                : Text(""),
+                            Container(
+                              width: 100,
+                              height: 100,
+                            )
+                          ],
+                        )),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ),
       ),
     );

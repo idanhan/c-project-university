@@ -10,17 +10,16 @@ import './cards/project3.dart' as pro3;
 import './cards/project4.dart' as pro4;
 import './actuallCards.dart/acCard1Front.dart' as pro1Real;
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class NewScreen extends StatefulWidget {
+  const NewScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<NewScreen> createState() => _NewScreentate();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _NewScreentate extends State<NewScreen> {
   void initState() {
     super.initState();
-    _loadScreen();
   }
 
   List<Widget> list1 = [];
@@ -61,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
     var data_back;
 
     for (final item in listitems.entries) {
-      if (item.value['id'] as String == id) {
+      if (item.value['id'] == id) {
         data_back = item.value;
       }
     }
